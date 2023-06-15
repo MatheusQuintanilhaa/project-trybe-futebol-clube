@@ -4,12 +4,11 @@ import Teams from '../../database/models/TeamsModel';
 import Matches from '../../database/models/MatchesModel';
 import InterfaceTeamLeaderboard from '../../Interfaces/InterfaceTeamLeaderBoard';
 
-
 class LeaderboardService {
   protected modelMatches: ModelStatic<Matches> = Matches;
   protected modelTeams: ModelStatic<Teams> = Teams;
 
-  async  getHomeTeamRankings(): Promise<InterfaceTeamLeaderboard[]> {
+  async getHomeTeamRankings(): Promise<InterfaceTeamLeaderboard[]> {
     const findTeam = await this.modelTeams.findAll();
     const findMathes = await this.modelMatches.findAll({ where: { inProgress: false } });
     const result: InterfaceTeamLeaderboard[] = [];

@@ -3,6 +3,7 @@ import TeamRoutes from './api/routes/Team.routes';
 import userRoutes from './api/routes/User.routes';
 import matcheRoutes from './api/routes/Matches.routes';
 import leaderboardRoutes from './api/routes/Leaderboard.routes';
+
 class App {
   public app: express.Express;
 
