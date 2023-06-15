@@ -34,8 +34,14 @@ class MatcheService {
     return { message: 'Finished' };
   }
 
+  // async updateGoals(body: InterfaceMatches, id: number): Promise<InterfaceResponse> {
+  //   this.model.update(body, { where: { id } });
+
+  //   return { message: 'updated goals' };
+  // }
+
   async updateGoals(body: InterfaceMatches, id: number): Promise<InterfaceResponse> {
-    this.model.update(body, { where: { id } });
+    await this.model.update(body, { where: { id } });
 
     return { message: 'updated goals' };
   }
